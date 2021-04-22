@@ -10,7 +10,7 @@
     <!--Typed.js-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
 
-    <title>Text Utils</title>
+    <title>DSPSC</title>
     <!-- Favicon-->
     <link rel="shortcut icon" href="https://codewithharry.com/static/photo.png">
     <style>
@@ -28,7 +28,7 @@
   </head>
   <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">TextUtils.in</a>
+  <a class="navbar-brand" href="#">DSPSC</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -54,7 +54,7 @@
 
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Welcome to TextUtils!</strong> You can do anything with your text here!
+  <strong>Welcome!</strong> You can do anything with your text here!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -63,57 +63,7 @@
 
 <div class="container">
 
-  <form action='/analyze' onsubmit="return validate()" method='post'> {% csrf_token %}
 
-
-
-  <div class="form-group">
-    <h3><span id="typed"></span></h3>
-
-    <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
-    
-	<!-- Word Counter -->
-	<p>
-	<span id="wordCount">0</span> Characters
-	<script type="text/javascript">
-		var exampleFormControlTextarea1 = document.getElementById("exampleFormControlTextarea1");
-		var wordCount = document.getElementById("wordCount");
-
-		exampleFormControlTextarea1.addEventListener("keyup",function(){
-		var characters = exampleFormControlTextarea1.value.split('');
-  		wordCount.innerText = characters.length;
-		});
-	</script>
-	</p>
-  </div>
-
-<div class="custom-control custom-switch">
-  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
-  <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
-</div>
-
-  <div class="custom-control custom-switch">
-  <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
-  <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
-</div>
-
-  <div class="custom-control custom-switch">
-  <input type="checkbox"  name="newlineremover" class="custom-control-input" id="customSwitch3">
-  <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
-</div>
-
-  <div class="custom-control custom-switch">
-  <input type="checkbox"  name="extraspaceremover" class="custom-control-input" id="customSwitch4">
-  <label class="custom-control-label" for="customSwitch4">Extra Spaces Remover</label>
-</div>
-
-<div class="custom-control custom-switch">
-    <input type="checkbox"  name="numberremover" class="custom-control-input" id="customSwitch5">
-    <label class="custom-control-label" for="customSwitch5">Number Remover</label>
-  </div>
-
-<button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
-    </form>
 </div>
  <!-- Typed.js DONT TOUCH THIS! --> 
  <div id="typed-strings">
@@ -121,7 +71,7 @@
   
   <script>
      var typed = new Typed('#typed',{
-                    strings:["You can do anything with your text here!","Enter your text here and let Text Utils do the magic!"],
+                    strings:["Hey I will add content here super soooooon"],
                     backSpeed: 15,
                     smartBackspace: true,
                     backDelay: 1200,
@@ -134,7 +84,7 @@
   <!-- Footer-->
 <footer class="footer">
   <div class="container">
-    <span class="text-light">&#169 2019 Textutils.in </span>
+    <span class="text-light">&#169 @devangspsingh </span>
   </div>
 </footer>
 
