@@ -7,65 +7,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Document</title>
+    <script src="./src/script.js"></script>
+
   <script type="module" crossorigin src="/assets/index.efe8651c.js"></script>
-  <link rel="stylesheet" href="/assets/index.8728ae60.css">
+  <link rel="stylesheet" href="/assets/index.208131e6.css">
 </head>
 
 <body>
-    <canvas id="cnv" class="h-screen w-screen fixed">
+    <canvas id="cnv" class="h-screen fixed w-screen">
     </canvas>
     <div class="h-screen w-screen fixed bg-black/50"></div>
 
-    <nav
-        class="p-1 z-10 items-center text-2xl font-semibold absolute top-0 left-0 right-0 flex w-screen h-16 max-w-5xl text-white mx-auto">
-        <div class="pl-3 sm:mx-8 rounded-full mt-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                class="overflow-visible my-1 w-10 fill-current hover:fill-yellow-400/80 active:fill-yellow-700">
+    <nav id="navBar"
+        class="p-1 z-10 items-center text-lg font-semibold absolute top-0 left-0 right-0 flex w-screen h-16 max-w-5xl text-white mx-auto">
+        <div onclick="scrollto(this)" data-scrolltarget="navBar" class="pl-3 sm:mx-8 mr-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                class="overflow-visible w-5 fill-current hover:fill-yellow-400/80 active:fill-yellow-700">
                 <path
                     d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
             </svg>
         </div>
-        <div class="px-2 py-1 rounded-full hover:text-black hover:bg-yellow-400/80 active:bg-yellow-700">Projects</div>
-        <div
-            class="flex text-black bg-yellow-400/80 px-4 py-1 rounded-full absolute right-0 sm:mx-8 mx-4 hover:bg-white active:bg-white/70">
+        <div onclick=scrollto(this) data-scrolltarget="project"
+            class="px-2 py-1 rounded-full hover:text-black hover:bg-yellow-400/80 active:bg-yellow-700">Projects</div>
+        <div onclick=scrollto(this) data-scrolltarget="contact"
+            class="px-2 py-1 rounded-full hover:text-black hover:bg-yellow-400/80 active:bg-yellow-700">Contact</div>
+
+        <!-- <div class="flex text-black bg-yellow-400/80 px-4 py-1 rounded-full absolute right-0 sm:mx-8 mx-4 hover:bg-white active:bg-white/70"> -->
+        <!-- <div class="flex text-gray-700 bg-gray-600 px-4 py-1 rounded-full absolute right-0 sm:mx-8 mx-4">
             <span>Resume</span>
-            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" stroke-width="2.5"
                     stroke="currentColor" class="w-6 h-6 my-1 mx-0.5">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg></span>
-        </div>
+        </div> -->
+
+        <!-- disabled button -->
+        <!-- <div
+            class="flex text-black bg-yellow-400/80 px-4 py-1 rounded-full absolute right-0 sm:mx-8 mx-4 hover:bg-white active:bg-white/70">
+            <span>Resume</span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" stroke-width="2.5"
+                    stroke="currentColor" class="w-6 h-6 my-1 mx-0.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg></span>
+        </div> -->
+
+
     </nav>
 
-    <div class="relative z-0">
+    <div class="relative z-0 w-screen">
         <div id="FirstDiv" class="h-screen w-screen text-white flex top-0">
             <div class="self-center mx-auto">
                 <img class="w-60 mx-auto" src="/assets/main.80e4f85a.png" alt="display illustration">
                 <div class="text-center">
-                    <div class="text-2xl font-bold my-3">Devang Shaurya Pratap Singh</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3">Devang Shaurya Pratap Singh</div>
                 </div>
-                <div class="my-10 mx-auto justify-center max-w-sm flex flex-wrap space-x-1 space-y-1">
-                    <div class="px-3 pb-1 mt-1 rounded-xl bg-blue-900/80">Python</div>
-                    <div class="px-3 pb-1 rounded-xl bg-emerald-900/80">Django</div>
-                    <div class="px-3 pb-1 rounded-xl bg-slate-800/80">Automation</div>
-                    <div class="px-3 pb-1 rounded-xl bg-yellow-600/80">JavaScript</div>
-                    <div class="px-3 pb-1 rounded-xl bg-gradient-to-tr from-cyan-300/80 to-purple-600/80">CSS</div>
-                    <div class="px-3 pb-1 p-0.5 mt-1 rounded-xl bg-purple-800/80">Bootstrap</div>
-                    <div class="px-3 pb-1 rounded-xl bg-red-900/80">HTML</div>
-                    <div class="px-3 pb-1 rounded-xl bg-cyan-500/80">Tailwind</div>
-                    <div class="px-3 pb-1 rounded-xl bg-slate-500/80">DevOps</div>
-                    <div class="px-3 pb-1 p-0.5 mt-1 rounded-xl bg-purple-500/80">Heroku</div>
+                <div class="gap-1 my-10 mx-auto justify-center max-w-sm flex flex-wrap">
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-blue-900/80">Python</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-emerald-900/80">Django</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-slate-800/80">Automation</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-yellow-600/80">JavaScript</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-gradient-to-tr from-cyan-300/80 to-purple-600/80">CSS
+                    </div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-purple-800/80">Bootstrap</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-red-900/80">HTML</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-cyan-500/80">Tailwind</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-slate-500/80">DevOps</div>
+                    <div class="px-3 pb-1 p-0.5 rounded-xl bg-purple-500/80">Heroku</div>
 
                 </div>
             </div>
         </div>
 
-        <div id="secondDiv" class="text-white flex flex-col w-screen">
+        <div id="contact" class="text-white flex flex-col w-screen h-screen items-center">
+            <div class="self-center mx-auto">
+                <img class="w-56 my-10 mx-auto" src="/assets/contactUs.4861d45e.png" alt="display illustration">
+
+                <div class="text-center">
+                    <div class="sm:text-2xl text-xl font-bold my-3">Links</div>
+                    <div class="my-10 flex flex-col gap-4">
+                        <a target="_blank" href="https://github.com/devangspsingh">
+                            <div class="flex items-center font-semibold justify-center bg-gray-800/80 hover:bg-gray-800 active:bg-gray-700 p-1 rounded-lg gap-2 px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                    class="fill-current w-5 overflow-visible">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                </svg>
+                                <span class="">Github</span>
+                            </div>
+                        </a>
+                        
+                        <!-- linkedin -->
+                        <a target="_blank" href="https://github.com/devangspsingh">
+                            <div class="flex items-center font-semibold justify-center bg-blue-500/80 hover:bg-blue-500 active:bg-blue-400 p-1 rounded-lg gap-2 px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                    class="fill-current w-5 overflow-visible">
+                                    <path stroke-linecap="round" stroke-linejoin="round" class=""
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg>
+                                <span class="">LinkedIn</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="project" class="text-white flex flex-col w-screen">
             <div class="projects text-3xl font-semibold mx-auto my-2">Projects</div>
             <div class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
 
-                <div class="w-80 max-w-full h-auto p-2 mx-auto">
-                    <img class="w-80 outline" src="/assets/wp4021806-pokemon-detective-pikachu-wallpapers.b874af9d.png" alt="">
+                <div id="Pmagicname" class="w-80 max-w-full h-auto p-2 mx-auto">
+                    <img class="w-80 outline" src="/assets/magicname.66827f45.png" alt="">
                     <div class="first-letter:flex flex-col my-3">
                         <div class="flex flex-col">
                             <!-- heading -->
@@ -89,40 +144,41 @@
                         <!-- buttons -->
                         <div class="text-md font-semibold my-2 flex flex-wrap gap-2">
                             <!-- view code button -->
-                            <div
-                                class="px-2 py-1 rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
+                            <!-- <div
+                                class="px-2 py-1 items-center rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
                                 <span>View Code</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"
                                         stroke-width="1.5" stroke="currentColor" class="ml-1 w-4 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </span>
-                            </div>
+                            </div> -->
+
                             <!-- read more button -->
                             <!-- <div
                                 class="px-2 py-1 rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
                                 <span>Read More</span>
                             </div> -->
 
-                            <div
-                                class="px-2 py-1 text-black rounded-md bg-yellow-400/80 hover:bg-white/80 hover:text-black active:bg-white/70 flex">
+                            <!-- <div
+                                class="items-center px-2 py-1 text-black rounded-md bg-yellow-400/80 hover:bg-white/80 hover:text-black active:bg-white/70 flex">
                                 <span>Visit Site</span>
                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"
                                         stroke-width="1.5" stroke="currentColor" class="ml-1 w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
                                     </svg>
                                 </span>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
                 </div>
 
-                <div class="w-80 max-w-full h-auto p-2 mx-auto">
-                    <img class="w-80 outline" src="/assets/wp4021806-pokemon-detective-pikachu-wallpapers.b874af9d.png" alt="">
+                <div id="Pslambook" class="w-80 max-w-full h-auto p-2 mx-auto">
+                    <img class="w-80 outline" src="/assets/slambook.2affa0ef.png" alt="">
                     <div class="first-letter:flex flex-col my-3">
                         <div class="flex flex-col">
                             <!-- heading -->
@@ -145,36 +201,38 @@
                             <span>That link/code could be used to fill up those questions.</span>
                             <span>Those answers could be viewd by the owner of the set of questions</span>
                         </div>
+
                         <!-- buttons -->
                         <div class="text-md font-semibold my-2 flex flex-wrap gap-2">
                             <!-- view code button -->
-                            <div
-                                class="px-2 py-1 rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
+                            <!-- <div
+                                class="px-2 py-1 items-center rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
                                 <span>View Code</span>
-                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"
                                         stroke-width="1.5" stroke="currentColor" class="ml-1 w-4 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </span>
-                            </div>
+                            </div> -->
+
                             <!-- read more button -->
                             <!-- <div
                                 class="px-2 py-1 rounded-md hover:bg-white/80 hover:text-black active:bg-white/70 border-2 flex">
                                 <span>Read More</span>
                             </div> -->
 
-                            <div
-                                class="px-2 py-1 text-black rounded-md bg-yellow-400/80 hover:bg-white/80 hover:text-black active:bg-white/70 flex">
+                            <!-- <div
+                                class="items-center px-2 py-1 text-black rounded-md bg-yellow-400/80 hover:bg-white/80 hover:text-black active:bg-white/70 flex">
                                 <span>Visit Site</span>
                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"
                                         stroke-width="1.5" stroke="currentColor" class="ml-1 w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
                                     </svg>
                                 </span>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -192,13 +250,13 @@
 
             <div class="flex text-lg items-center gap-10 my-4 justify-center mx-auto max-w-xl">
                 <div class="flex mx-auto">Projects</div>
-                <div class="pt-1 flex items-center justify-center flex-wrap text-sm text-white/50 gap-3 gap-y-1 mx-auto">
-                    <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Slam Book</a></div>
+                <div
+                    class="pt-1 flex items-center justify-center flex-wrap text-sm text-white/50 gap-3 gap-y-1 mx-auto">
+                    <div onclick=scrollto(this) data-scrolltarget="Pslambook"><span
+                            class="hover:text-yellow-400/80 active:text-yellow-700">Slam Book</span></div>
                     <!-- <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Slam Book</a></div> -->
-                    <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Magic Name</a></div>
-                    <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Magic Name</a></div>
-                    <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Magic Name</a></div>
-                    <div><a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">Magic Name</a></div>
+                    <div onclick="scrollto(this)" data-scrolltarget="Pmagicname"><span
+                            class="hover:text-yellow-400/80 active:text-yellow-700">Magic Name</span></div>
                 </div>
             </div>
 
@@ -206,29 +264,33 @@
 
                 <div class="flex mx-auto gap-4">
                     <!-- home -->
-                    <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                class="w-8 fill-current hover:fill-yellow-400/80 active:fill-yellow-700">
+                    <div onclick="scrollto(this)" data-scrolltarget="navBar"><span href="#"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                class="w-6 fill-current hover:fill-yellow-400/80 active:fill-yellow-700">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
-                            </svg></a></div>
+                            </svg></span></div>
 
                     <!-- github -->
-                    <div class=""><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                class="hover:fill-yellow-400/80 active:fill-yellow-700 fill-current w-8 overflow-visible">
+                    <div class=""><a target="_blank" href="https://github.com/devangspsingh"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                class="hover:fill-yellow-400/80 active:fill-yellow-700 fill-current w-6 overflow-visible">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                             </svg></a></div>
 
                     <!-- linkedin -->
-                    <div><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
-                                class="w-8 overflow-visible hover:fill-yellow-400/80 active:fill-yellow-700 fill-current">
+                    <div><a target="_blank" href="https://linkedin.com/in/devangspsingh"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16"
+                                class="w-6 overflow-visible hover:fill-yellow-400/80 active:fill-yellow-700 fill-current">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                             </svg></a></div>
                 </div>
 
-                <div class="flex text-sm mx-auto gap-2">
-                    <span>© 2022 <a href="#" class="hover:text-yellow-400/80 active:text-yellow-700">devangspsingh</a></span>
+                <div onclick="scrollto(this)" data-scrolltarget="navBar" class="flex text-sm mx-auto gap-2">
+                    <span>© 2022 <span
+                            class="hover:text-yellow-400/80 active:text-yellow-700">devangspsingh</span></span>
                 </div>
 
             </div>
